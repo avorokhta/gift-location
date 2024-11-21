@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ffccd7;
+  --red: #ff460f;
+  --yellow: #f5bd3d;
+  --black: #3d3d3d;
+  --blue: #44a7f2;
+  --gray: #d8d8d8;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(0.85);
+  }
+}
+
+@keyframes garland {
+  from {
+    color: var(--red);
+  }
+  50% {
+    color: var(--yellow);
+  }
+  to {
+    color: var(--blue);
+  }
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: var(--white);
+  color: var(--black);
+  font-family: "Marmelad", sans-serif;
+  padding: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+input {
+  font-family: inherit;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: bold;
+  width: 150px;
+  margin: 0;
+  height: 3rem;
+  background: none;
+  color: var(--blue);
+  border: none;
+  border-bottom: 3px dashed var(--gray);
+  outline: none;
+  text-align: center;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: none;
+  color: var(--pink);
+  background: none;
+  border-radius: 3px;
+  animation: pulse 1s linear infinite;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.clock {
+  animation: garland 0.5s ease-in-out infinite;
+}
